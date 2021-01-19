@@ -131,3 +131,5 @@ dmypy.json
 .DS_Store
 .azureml
 installation.py
+consume_model.ipynb
+best_model_Votingg
