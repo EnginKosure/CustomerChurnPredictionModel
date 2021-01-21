@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "e3c0e09a-8507-4657-b690-87a3ac9e7e6d",
+		"name": "ps-personalizer-rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Personalizer Rank",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "4646215c144c4ed4b7da3dfaa89b75df"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"contextFeatures\": [\r\n    {\r\n      \"season\": \"spring\"\r\n    },\r\n    {\r\n      \"time\": \"morning\"\r\n    },\r\n    {\r\n      \"age\": 10\r\n    },\r\n    {\r\n      \"calorieLevel\": 0\r\n    },\r\n    {\r\n      \"dtype\": \"hot\"\r\n    }\r\n  ],\r\n  \"actions\": [\r\n    {\r\n      \"id\": \"coffee\",\r\n      \"features\": [\r\n        {\r\n          \"calorieLevel\": 1\r\n        },\r\n        {\r\n          \"caffeineLevel\": 5\r\n        },\r\n        {\r\n          \"dtype\": \"hot\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"latte\",\r\n      \"features\": [\r\n        {\r\n          \"calorieLevel\": 4\r\n        },\r\n        {\r\n          \"caffeineLevel\": 5\r\n        },\r\n        {\r\n          \"dtype\": \"hot\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"tea\",\r\n      \"features\": [\r\n        {\r\n          \"calorieLevel\": 1\r\n        },\r\n        {\r\n          \"caffeineLevel\": 5\r\n        },\r\n        {\r\n          \"dtype\": \"hot\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"water\",\r\n      \"features\": [\r\n        {\r\n          \"calorieLevel\": 0\r\n        },\r\n        {\r\n          \"caffeineLevel\": 0\r\n        },\r\n        {\r\n          \"dtype\": \"cold\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"smoothie\",\r\n      \"features\": [\r\n        {\r\n          \"calorieLevel\": 5\r\n        },\r\n        {\r\n          \"caffeineLevel\": 1\r\n        },\r\n        {\r\n          \"dtype\": \"cold\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"excludedActions\": [ ],\r\n  \"eventId\": \"D449CD96-A3AB-4656-ADF3-8DDD426BE876\"\r\n}"
+				},
+				"url": {
+					"raw": "https://cs-per-ps01.cognitiveservices.azure.com/personalizer/v1.0/rank",
+					"protocol": "https",
+					"host": [
+						"cs-per-ps01",
+						"cognitiveservices",
+						"azure",
+						"com"
+					],
+					"path": [
+						"personalizer",
+						"v1.0",
+						"rank"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Personalizer Reward",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "4646215c144c4ed4b7da3dfaa89b75df",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"value\": 1\r\n}"
+				},
+				"url": {
+					"raw": "https://cs-per-ps01.cognitiveservices.azure.com/personalizer/v1.0/events/D449CD96-A3AB-4656-ADF3-8DDD426BE876/reward",
+					"protocol": "https",
+					"host": [
+						"cs-per-ps01",
+						"cognitiveservices",
+						"azure",
+						"com"
+					],
+					"path": [
+						"personalizer",
+						"v1.0",
+						"events",
+						"D449CD96-A3AB-4656-ADF3-8DDD426BE876",
+						"reward"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
