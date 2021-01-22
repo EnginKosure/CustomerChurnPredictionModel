@@ -133,3 +133,7 @@ dmypy.json
 installation.py
 consume_model.ipynb
 best_model_Votingg
+demo_with_keys.py
+demo.py
+workshop-demo
+.vscode
