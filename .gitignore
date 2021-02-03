@@ -132,6 +132,7 @@ dmypy.json
 .azureml
 installation.py
 consume_model.ipynb
+consume_model_demo.ipynb
 best_model_Votingg
 demo_with_keys.py
 demo.py
